@@ -24,29 +24,38 @@
   //});
 
   document.getElementById('butSubmit').addEventListener('click', function() {
-    var phone = document.getElementById('phoneNumber');
-    var admin = document.getElementById('adminName');
-    var incident = document.getElementById('incidentDescription');
-    app.postApiRequest(phone, admin, incident)
+    var phone = document.getElementById('phoneNumber').value;
+    var name = document.getElementById('yourName').value;
+    var description = document.getElementById('incidentDescription').value;
+    app.postApiRequest(phone, name, description)
   });
 
   // Prepare a data for API request
-  app.postApiRequest = function(phone, admin, incident) {
+  app.postApiRequest = function(phone, name, description) {
     var url = 'https://sampleapi.com/api/v0.1/new';
     // Make the XHR to get the data, then update the card
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if (request.readyState === XMLHttpRequest.DONE) {
-        if (request.status === 200) {
-          var response = JSON.parse(request.response);
-          response.phone = phone;
-          response.admin = admin;
-          reponse.incident = incident;
-        }
-      }
+    
+    var additionalInfo = {
+        "phone":phone,
+        "name":name,
+        "description":description
     };
+
+    //TODO make JSON object that server expects
+    var requestObj = { 
+      reportInfo: {
+          "channel":"web",
+          "id":"TBD",
+           "location_info":"N/A"
+         }, 
+         "status":"reported",
+         "additional_report_content":JSON.stringify(additionalInfo)
+    };
+
+
     request.open('POST', url);
-    request.send();
+    request.send(JSON.stringify(requestObj));
   };
 
 
