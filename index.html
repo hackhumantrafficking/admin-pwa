@@ -26,13 +26,13 @@
         <div class="panel-body">
           <form role="form" novalidate>
             <div class="form-group">
-              <input name="inpPhone" type="text" class="form-control input-sm" placeholder="Phone Number">
+              <input id="phoneNumber" type="text" class="form-control input-sm" placeholder="Phone Number">
             </div>
             <div class="form-group">
-              <input name="inpAdminName" type="text" class="form-control input-sm" placeholder="Admin Name">
+              <input id="adminName" type="text" class="form-control input-sm" placeholder="Admin Name">
             </div>
             <div class="form-group">
-              <textarea name="inpIncidentDescription" class="form-control input-sm" row="3" placeholder="Incident Description"></textarea>
+              <textarea id="incidentDescription" class="form-control input-sm" row="3" placeholder="Incident Description"></textarea>
             </div>
 
             <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
@@ -40,6 +40,7 @@
 
         </div>
       </div>
+
     </div>
   </main>
 
@@ -50,7 +51,8 @@
   </div> -->
 
   <script src="js/app.js" async></script>
-  <script src="js/bootstrap.min.js" async></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
   
 </body>
 </html>

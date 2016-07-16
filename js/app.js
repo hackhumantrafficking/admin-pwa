@@ -25,26 +25,31 @@
     app.updateForecasts();
   });
 
-  document.getElementById('butAdd').addEventListener('click', function() {
-    // Open/show the add new city dialog
-    app.toggleAddDialog(true);
+  document.getElementById('butSubmit').addEventListener('click', function() {
+    var phone = document.getElementById('phoneNumber');
+    var admin = document.getElementById('adminName');
+    var incident = document.getElementById('incidentDescription');
+    app.postApiRequest(phone, admin, incident)
   });
 
-  document.getElementById('butAddCity').addEventListener('click', function() {
-    // Add the newly selected city
-    var select = document.getElementById('selectCityToAdd');
-    var selected = select.options[select.selectedIndex];
-    var key = selected.value;
-    var label = selected.textContent;
-    app.getForecast(key, label);
-    app.selectedCities.push({key: key, label: label});
-    app.toggleAddDialog(false);
-  });
-
-  document.getElementById('butAddCancel').addEventListener('click', function() {
-    // Close the add new city dialog
-    app.toggleAddDialog(false);
-  });
+  // Prepare a data for API request
+  app.postApiRequest = function(phone, admin, incident) {
+    var url = 'https://sampleapi.com';
+    // Make the XHR to get the data, then update the card
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function() {
+      if (request.readyState === XMLHttpRequest.DONE) {
+        if (request.status === 200) {
+          var response = JSON.parse(request.response);
+          response.phone = phone;
+          response.admin = admin;
+          reponse.incident = incident;
+        }
+      }
+    };
+    request.open('POST', url);
+    request.send();
+  };
 
 
   /*****************************************************************************
@@ -147,9 +152,5 @@
       app.getForecast(key);
     });
   };
-
-  
-  // Uncomment the line below to test with the provided fake data
-   app.updateForecastCard(fakeForecast);
 
 })();
