@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CWIN 1098 Admin</title>
   <link rel="stylesheet" type="text/css" href="styles/inline.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,23 +18,30 @@
   </header>
 
   <main class="main">
-    <div class="input-form" > 
-      <form role="form" novalidate>
-          
-          <label for="inpPhone">Phone Number</label>
-          <input name="inpPhone" type="text"> </input></br>
-          <label for="inpAdminName">Admin Name</label>
-          <input name="inpAdminName" type="text"> </input>  </br>
-          <label for="inpIncidentDescription">Incident Description</label>
-          <input name="inpIncidentDescription" type="textarea"> </input>  </br>
-      </form>
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Please fill the form</h3>
+        </div>
+        <div class="panel-body">
+          <form role="form" novalidate>
+            <div class="form-group">
+              <input name="inpPhone" type="text" class="form-control input-sm" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+              <input name="inpAdminName" type="text" class="form-control input-sm" placeholder="Admin Name">
+            </div>
+            <div class="form-group">
+              <textarea name="inpIncidentDescription" class="form-control input-sm" row="3" placeholder="Incident Description"></textarea>
+            </div>
 
-      <button id="butSubmit" class="mdl-button" aria-label="Submit">Submit</button>
+            <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
+          </form>
 
+        </div>
+      </div>
     </div>
   </main>
-
-
 
   <!--<div class="loader">
     <svg viewBox="0 0 32 32" width="32" height="32">
@@ -40,8 +49,8 @@
     </svg>
   </div> -->
 
-  <!-- Insert link to app.js here -->
   <script src="scripts/app.js" async></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
   
 </body>
 </html>
