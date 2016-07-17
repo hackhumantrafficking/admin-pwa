@@ -19,26 +19,25 @@
   </header>
 
   <main class="main">
-    <br>
-    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-      
-      <div align="justify"><img src="/images/1098-logo.png"
-          style="
-              width: 300px;
-              height: 300px;
-              margin-left: auto;
-              margin-right: auto;
-              display: block;
-              padding-bottom:20px;"
-
-        /> </div>
-
-      <div align="justify">CWIN’s helpline system entered a new phase with the installation of toll free number. The Ministry of Women, Children and Social Welfare, Nepal Telecom and the Nepal Telecommunications Corporation all jointly own the Child Helpline with its toll free number 1098. The helplines in Kathmandu, Biratnagar, Pokhara, Hetauda and Nepalgunj will now all have the same number and CWIN plans to expand the Child Helpline into other parts of the country. If you can, please call <a href="tel:1098">1098<a/></div> 
+    <div class="container">
       <br>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">Please fill out the entire form</h3>
+      <div class="row-fluid">
+        <div class="col-lg-8" align="justify">
+
+          <img src="/images/1098-logo.png"
+          style="
+          width: 300px;
+          height: 300px;
+          margin-left: auto;
+          margin-right: auto;
+          display: block;
+          padding-bottom:20px;"
+
+          />
+
+          <p>CWIN’s helpline system entered a new phase with the installation of toll free number. The Ministry of Women, Children and Social Welfare, Nepal Telecom and the Nepal Telecommunications Corporation all jointly own the Child Helpline with its toll free number 1098. The helplines in Kathmandu, Biratnagar, Pokhara, Hetauda and Nepalgunj will now all have the same number and CWIN plans to expand the Child Helpline into other parts of the country. If you can, please call <a href="tel:1098">1098</a></p>
         </div>
+<<<<<<< Updated upstream
         <div class="panel-body">
           <form role="form" novalidate>
             <div class="form-group">
@@ -49,19 +48,38 @@
             </div>
             <div class="form-group">
               <textarea id="incidentDescription" class="form-control input-sm" rows="10" placeholder="How can we help? (हामी तपाइलाई कसरी सहयोग गर्न सक्छौ?)"></textarea>
+=======
+        <div class="col-lg-4">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Please fill out the entire form</h3>
+>>>>>>> Stashed changes
             </div>
+            <div class="panel-body">
+              <form role="form" novalidate>
+                <div class="form-group">
+                  <input id="phoneNumber" type="text" class="form-control input-sm" placeholder="Phone Number" autofocus>
+                </div>
+                <div class="form-group">
+                  <input id="yourName" type="text" class="form-control input-sm" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                  <textarea id="incidentDescription" class="form-control input-sm" rows="10" placeholder="How can we help?"></textarea>
+                </div>
 
-            <div class="form-group bg-danger">
-            <div id="formError" style="display:none" class="error">Please fill out the entire form</div>   
+                <div class="form-group bg-danger">
+                  <div id="formError" style="display:none" class="error">Please fill out the entire form</div>   
+                </div>
+
+              </form>
+
+              <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
+
             </div>
-            
-          </form>
-
-            <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
-
+          </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </main>
 
