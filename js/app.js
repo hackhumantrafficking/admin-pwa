@@ -27,7 +27,21 @@
     var phone = document.getElementById('phoneNumber').value;
     var name = document.getElementById('yourName').value;
     var description = document.getElementById('incidentDescription').value;
-    app.postApiRequest(phone, name, description)
+
+    if (phone == "" || phone == null || name == "" || name == null || description == "" || description == null){
+        document.getElementById('formError').style.display = "block";
+    } else { 
+      document.getElementById('formError').style.display = "none";
+      app.postApiRequest(phone, name, description)
+      alert('Thank you, someone from CWIN will respond shortly.');
+
+      document.getElementById('phoneNumber').value = '';
+      document.getElementById('yourName').value = '';
+      document.getElementById('incidentDescription').value = '';
+
+    }
+
+    
   });
 
   // Prepare a data for API request

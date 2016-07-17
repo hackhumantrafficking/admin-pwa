@@ -23,7 +23,7 @@
       <div>CWIN’s helpline system entered a new phase with the installation of toll free number. The Ministry of Women, Children and Social Welfare, Nepal Telecom and the Nepal Telecommunications Corporation all jointly own the Child Helpline with its toll free number 1098. The helplines in Kathmandu, Biratnagar, Pokhara, Hetauda and Nepalgunj will now all have the same number and CWIN plans to expand the Child Helpline into other parts of the country. If you can, please call <a href="tel:1098">1098<a/></div> 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">Please fill the form</h3>
+          <h3 class="panel-title">Please fill out the entire form</h3>
         </div>
         <div class="panel-body">
           <form role="form" novalidate>
@@ -37,8 +37,13 @@
               <textarea id="incidentDescription" class="form-control input-sm" row="3" placeholder="How can we help?"></textarea>
             </div>
 
-            <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
+            <div class="form-group bg-danger">
+            <div id="formError" style="display:none" class="error">Please fill out the entire form</div>   
+            </div>
+            
           </form>
+
+            <button id="butSubmit" class="btn btn-info btn-block" aria-label="Submit">Submit</button>
 
         </div>
       </div>
