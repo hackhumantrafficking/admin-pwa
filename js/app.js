@@ -46,7 +46,7 @@
 
   // Prepare a data for API request
   app.postApiRequest = function(phone, name, description) {
-    var url = 'https://sampleapi.com/api/v0.1/new';
+    var url = 'https://my1098helpline.appspot.com/api/v0.1/new';
     // Make the XHR to get the data, then update the card
     var request = new XMLHttpRequest();
     
@@ -58,17 +58,18 @@
 
     //TODO make JSON object that server expects
     var requestObj = { 
-      reportInfo: {
-          "channel":"web",
-          "id":"TBD",
-           "location_info":"N/A"
+      incident_info: {
+          "sender_channel":"web",
+          "sender_id":"TBD"
          }, 
-         "status":"reported",
-         "additional_report_content":JSON.stringify(additionalInfo)
+         "additional_info":JSON.stringify(additionalInfo)
     };
 
 
     request.open('POST', url);
+    //request.setRequestHeader("Access-Control-Allow-Origin", "*");
+    request.setRequestHeader("Content-Type", "text/plain; charset=utf-8");
+
     request.send(JSON.stringify(requestObj));
   };
 
