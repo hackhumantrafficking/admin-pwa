@@ -62,7 +62,7 @@
           "sender_channel":"web",
           "sender_id":"TBD"
          }, 
-         "additional_info":JSON.stringify(additionalInfo)
+         "additional_info":additionalInfo
     };
 
 
